@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="home New.css">
+    <meta charset="utf-8">
+    <title>erick.codes</title>
+    <link rel="icon" href="images/eIcon2.png">
+  </head>
+
+  <body>
+
+    <img id="header" src="images/header2.png">
+    <hr id="topHR">
+    <div id="bottomPusher"></div>
+    
+    <div id="top">
+        <div id="profileContainer">
+            <div class="bubble">
+                <img src="images/me5flipped.png">
+                <div class="bubbleDarken"></div>
+            </div>
+            <div id="slideContainer">
+                <div id="radioButtonContainer">
+                    <div id="radioButton1" class="radioButton"><div class="radioDarken"></div></div>
+                    <div id="radioButton2" class="radioButton"><div class="radioDarken"></div></div>
+                    <div id="radioButton3" class="radioButton"><div class="radioDarken"></div></div>
+                </div> 
+                <div id="textBubble"></div>
+                <div id="slideFrame">
+                    <p class="bubbleDescription">Hi. I'm Erick &ndash; an aspiring developer,<br>tech enthusiast, and Computer Science<br>student at the University of Florida.</p>
+                    <p class="bubbleDescription">Welcome to my personal site! This will<br>serve as a directory for my projects,<br>which you can check out below.</p>
+                    <p class="bubbleDescription">My resume and email address are also<br>below. Feel free to contact me for any<br>collaboration / employment inquiries.</p>
+                    <p class="bubbleDescription">Hi. I'm Erick &ndash; an aspiring developer,<br>tech enthusiast, and Computer Science<br>student at the University of Florida.</p>
+                </div>
+            </div>
+        </div>
+        <div id="iconContainer">
+            <a id="resumeContainer" href="files/resume.pdf" target="_blank">
+                <img id="resume" src="images/resumeIcon.png">
+                <p id="resumeText">View My Resume</p>
+            </a>
+            <a id="emailContainer" onclick="copyEmail()" onmouseout="revertTooltip()">
+                <span id="tooltip">Copy Email To Clipboard</span>
+                <img id="email" src="images/emailIcon.png">
+                <p id="emailText">Send Me An Email</p>
+            </a>
+            <a id="githubContainer" href="https://github.com/erickcgt" target="_blank">
+                <img id="github" src="images/githubIcon.png">
+                <p id="githubText">Visit My Github</p>
+            </a>
+        </div>
+    </div>
+
+    <div id="bottom">
+
+        <h2>Projects</h2>
+        <hr>
+        <div class="projectSection">
+            <div class="projectTitle"><span id="pokeplanner">Pok&eacute;Planner</span></div>
+            <button class="projectButton"><a target="_blank" href="pokemon.html">View Project</a></button>
+            <div id="topics1"><span class="subheader">Topics</span>: 
+                <button class="htmlButton topic">html</button>
+                <button class="cssButton topic">css</button>
+                <button class="javascriptButton topic">javascript</button>
+                <button class="jqueryButton topic">jquery</button>
+                <button class="apiButton topic">api</button>
+            </div>
+            <div id="description" class="projectDescription"><span class="subheader">Description: </span>An easy to use webpage that allows you to plan out your team for Pokemon games. Features include filtering by region and by type, along with searching by name. This tool utilizes the <a target="_blank" href="https://pogoapi.net/documentation/" id="referenceLink">PoGo API</a> to retreive relevant data such as Pokemon IDs, names, and types.</div>
+            <div id="pokeplannerBackground"></div>
+        </div>
+        <hr>
+        <div class="projectSection downloadable">
+            <div class="projectTitle" id="havocTitle">Havoc in the<br>Solar System</div>
+            <button class="projectButton two"><a href="Havoc/Download.zip">Download Game</a></button>
+            <div id="topics1"><span class="subheader">Topics</span>: 
+                <button class="cSharpButton topic">c#</button>
+                <button class="unityButton topic">unity</button>
+                <button class="apiButton topic">api</button>
+                <button class="photoshopButton topic">photoshop</button>
+            </div>
+            <div id="description" class="projectDescription"><span class="subheader">Description: </span>A videogame about an astronaut who gets stranded in space and needs to collect enough fuel to continue his mission. Created using the <a target="_blank" href="https://docs.unity3d.com/ScriptReference/index.html" id="referenceLink">Unity API</a> and game engine, C# for scripting things such as game mechanics, and Photoshop for asset creation.</div>
+            <div class="downloadInstructions"><span class="subheader">Download Instructions: </span>
+                <ol>
+                    <li>Click the download button above.</li>
+                    <li>Extract the ZIP file to your preferred location.</li>
+                    <li>(Optional) Right click on "Havoc in the Solar System.exe" and create a shortcut on your desktop.</li>
+                    <li>Click the EXE file or the shortcut to open up the game.</li>
+                    <li>Use WASD or ARROW KEYS to move, and SPACE to jump.</li>
+                </ol>
+            </div>
+            <div id="demo"><span class="subheader">Demo:</span></div>
+            <iframe id="demoVideo" width="400" height="225" src="https://www.youtube.com/embed/sqrngVR5myw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div id="havocBackground"></div>
+        </div>
+        <hr>
+    </div>
+
+
+    <script src="home.js"></script>
+  </body>
+
+</html>

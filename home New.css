@@ -1,0 +1,405 @@
+/*========= Main Sections =========*/
+html{
+    height: 100%;
+}  
+#header{
+    position: relative;
+    padding: auto;
+    margin: auto;
+    padding-top: 10px;
+    height: 40px;
+    display: block;
+}
+#screenContainer{
+    height: 100%;
+    min-height: 100vh
+}
+#bottomPusher{
+    height: 600px;
+    display: none;
+}
+#top{
+    background: linear-gradient(to bottom, #a32137, #5f204a);
+    position: absolute; 
+    width: 100%;
+    min-width: 800px;
+    height: 500px;
+    box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.5);
+    transform: skewY(3deg);
+    top: 120px;
+    margin-bottom: 10px;
+}
+#profileContainer{
+    position: relative;
+    top: 30px;
+    left: -40px;
+    height: 203px;
+    width: 620px;
+    margin: 0 auto;
+    transform: skewY(-3deg);
+}
+.bubble{
+    position: absolute;
+    background: linear-gradient(to bottom, #a32137, #5f204a);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 0.1em solid white;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.bubble>img{
+    position: absolute;
+    width: 218px;
+    height: 300px;
+    left: -5px;
+    top: -20px;
+}
+.bubbleDarken{
+    position: absolute;
+    box-shadow: 0px 0px 20px black inset;
+    width: 210px;
+    height: 210px;
+    top: -5px;
+    left: -5px;
+    border-radius: 50%;
+    z-index: 2;
+}
+#textBubble{
+    top: 15px;
+    display: flex;
+    padding-left: 110px;
+    margin: 20px 0px;
+    position: absolute;
+    z-index: -2;
+    width: 340px;
+    height: 122px;
+    border-left: 70px solid rgba(0, 0, 0, 0);
+    border-right: 20px solid rgba(0, 0, 0, 0);
+    background: linear-gradient(to bottom, rgb(226, 226, 226), rgb(182, 182, 182));
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+.bubbleDescription{
+    display: flex;
+    padding-left: 110px;
+    margin: 20px 0px;
+    position: relative;
+    z-index: -1;
+    max-width: 370px;
+    height: 122px;
+    font-weight: bold;
+    border-left: 70px solid rgba(0, 0, 0, 0);
+    border-right: 20px solid rgba(0, 0, 0, 0);
+    color: #a32137;
+    font-size: 18px;
+    line-height: 1.5em;
+}
+#slideFrame{
+    position: relative;
+    width: 580px;
+    height: 122px;
+    z-index: -1;
+    top: 35px;
+    overflow: hidden;
+}
+#slideContainer{
+    position: relative;
+    width: 550px;
+    height: 142px;
+    z-index: -1;
+    left: 50px;
+}
+#radioButtonContainer{ 
+    position: absolute;
+    left: 100%;
+    margin-top: 55px;
+    width: 70px;
+    height: 100px;
+}
+.radioButton{
+    position: relative;
+    width: 12px;
+    height: 12px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+.radioButton:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+}
+.radioDarken{
+    visibility: hidden;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background: #af2543;
+}
+#iconContainer{
+    width: 300px;
+    height: 200px;
+    padding-top: 20px;
+    margin: auto;
+    transform: skewY(-3deg);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding-left: 60px;
+}
+#resumeContainer{
+    text-decoration: none;
+    display: grid;
+    grid-row: 1 / 2;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+#resumeContainer:hover{
+    transform: scale(1.05);
+}
+#resume{
+    grid-column: 1 / 2;
+    width: 50px;
+    float: left;
+    justify-self: center;
+}
+#resumeText{
+    grid-column: 2 / 6;
+    color: rgb(226, 226, 226);
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+#emailContainer{
+    text-decoration: none;
+    display: grid;
+    grid-row: 2 / 3;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+#emailContainer:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+#email{
+    grid-column: 1 / 2;
+    width: 60px;
+    float: left;
+    justify-self: center;
+}
+#emailText{
+    grid-column: 2 / 6;
+    color: rgb(226, 226, 226);
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+#tooltip{
+    visibility: hidden;
+    background-color: #af2543;
+    color: rgb(246,246,246);
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px;
+    position: absolute;
+    z-index: 1;
+    top: 12px;
+    left: 55px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border: 1px solid white;
+}
+#emailContainer:hover #tooltip{
+    visibility: visible;
+    opacity: 1;
+}
+#githubContainer{
+    text-decoration: none;
+    display: grid;
+    grid-row: 3 / 4;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+#githubContainer:hover{
+    transform: scale(1.05);
+}
+#github{
+    grid-column: 1 / 2;
+    width: 60px;
+    float: left;
+    justify-self: center;
+}
+#githubText{
+    grid-column: 2 / 6;
+    color: rgb(226, 226, 226);
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+#bottom{
+    top: calc(100vh - 150px);
+    position: relative;
+    margin-bottom: 100px;
+}
+h2{
+    position: relative;
+    top: 10px;
+    text-align: center;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 35px;
+    color: #a32137; 
+    font-weight: 700;
+}
+hr{
+    min-width: 800px;
+    width: 70%;
+    border: 0;
+    height: 4px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(185, 34, 60), rgba(255, 255, 255, 0));
+    box-shadow: inset 0px 2px 1px rgb(226, 226, 226);
+}
+#topHR{
+    width: 300px;
+}
+.projectSection{
+    position: relative;
+    width: 800px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(8, 25px);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-items: center;
+}
+.projectSection.downloadable{
+    grid-template-rows: repeat(18, 25px);
+}
+.projectTitle{
+    grid-area: 1 / 1 / 2 / 3;
+    padding: 3px 10px;
+}
+#pokeplanner{
+    color: rgb(219, 219, 26);
+    font-size: 2em;
+    -webkit-text-stroke: 1px rgb(0, 132, 255);
+    text-shadow: 1px 1px 0px rgb(0, 81, 156), 2px 2px 0px rgb(0, 81, 156), 3px 3px 0px rgb(0, 81, 156), 4px 4px 0px rgb(0, 81, 156), 5px 5px 0px rgb(0, 81, 156), 0px 0px 5px rgb(0, 0, 0);  
+    font-weight: bold; 
+}
+#havocTitle{
+    color: rgb(117, 0, 184);
+    font-size: 1.5em;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    text-shadow:  0px 0px 3px rgb(0, 0, 0), 0px 0px 3px rgb(0, 0, 0);  
+    font-weight: 900;
+    text-align: center;
+}
+.projectButton{
+    grid-area: 4 / 1 / 7 / 3;
+    border: none;
+    height: 40px;
+    align-self: center;
+    background: linear-gradient(to bottom, #a32137, #5f204a);
+    color: white;
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.1);
+    transition: all .2s ease-in-out;
+    font-size: 18px;
+}
+.projectButton.two{
+    grid-area: 5 / 1 / 6 / 3;
+}
+.projectButton > a{ /*removing hyperlink CSS (underline and blue/purple color)*/
+    color: inherit;
+    text-decoration: inherit;
+}
+.projectButton:hover{
+    transform: scale(1.2);
+}
+#topics1{
+    grid-area: 1 / 3 / 2 / 6;
+    padding: 3px 10px;
+    width: 400px; 
+}
+.topic{
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    padding: 3px 10px;
+    top: -2px;  
+}
+.projectDescription{
+    grid-area: 3 / 3 / 8 / 6;
+}
+.subheader{
+    text-align: left;
+    font-weight: bold;
+    color: #a32137
+}
+#description{
+    padding: 3px 10px;
+    width: 400px;  
+    line-height: 1.3;
+}
+.downloadInstructions{
+    grid-area: 9 / 1 / 10 / 3;
+    line-height: 1.3;
+    text-align: center;
+}
+li{
+    text-align: left;
+}
+#demo{
+    grid-area: 9 / 3 / 10 / 6;
+}
+#demoVideo{
+    grid-area: 10 / 3 / 11 / 6;
+    align-self: normal;
+}
+#referenceLink{
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.htmlButton{
+    background: rgb(209, 125, 77);
+}
+.cssButton{
+    background: rgb(70, 196, 196);
+}
+.javascriptButton{
+    background: rgb(252, 228, 93);
+}
+.apiButton{
+    background: rgb(111, 219, 96);
+}
+.jqueryButton{
+    background: rgb(194, 194, 194);
+}
+.cSharpButton{
+    color: white;
+    background: rgb(110, 26, 150);
+}
+.unityButton{
+    color: white;
+    background: rgb(0, 0, 0);
+}
+.photoshopButton{
+    color: white;
+    background: rgb(0, 71, 224);
+}
+body{
+    color: rgb(68, 67, 67);
+    background: rgb(226, 226, 226);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    margin: 0 !important;
+    height: 100%;
+    width: 100%;
+}
